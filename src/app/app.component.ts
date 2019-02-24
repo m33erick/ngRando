@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Hike } from './hike/hike';
+import { HikeService } from './hike/hike.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngRando';
+  hikes: Hike[];
+  constructor(private _hikeService: HikeService) {
+ }
+ ngOnInit() {
+  this.hikes = this._hikeService.getHikes();
+  console.log(this.hikes);
+ }
 }

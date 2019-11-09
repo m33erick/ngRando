@@ -12,7 +12,8 @@ export class AppComponent {
   constructor(private _hikeService: HikeService) {
  }
  ngOnInit() {
-  this.hikes = this._hikeService.getHikes();
-  console.log(this.hikes);
- }
-}
+  this._hikeService.getJSON().subscribe(data => {
+    console.log(data);
+  });
+   }
+  }

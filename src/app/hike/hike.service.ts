@@ -14,6 +14,6 @@ export class HikeService {
       }
 
       public getJSON(): Observable<any> {
-        return this.http.get('/app/api/hikes.json')
+        return this.http.get('assets/data/hikes.json');
       }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hike } from './hike/hike';
 import { HikeService } from './hike/hike.service';
 
@@ -7,7 +7,7 @@ import { HikeService } from './hike/hike.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   hikes: Hike[];
   constructor(private _hikeService: HikeService) {
  }

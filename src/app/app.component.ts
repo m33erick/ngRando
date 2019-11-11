@@ -12,8 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private _hikeService: HikeService) {
  }
  ngOnInit() {
-  this._hikeService.getJSON().subscribe(data => {
-    console.log(data);
-  });
-   }
-  }
+  this._hikeService.getJSON().subscribe(
+    data => this.hikes = data);
+ }
+}
